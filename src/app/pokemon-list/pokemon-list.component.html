@@ -1,0 +1,30 @@
+<h2 class="pokemon-list-title">Lista de Pokemons</h2>
+<div>
+  <input type="text" placeholder="Search Pokémon" [(ngModel)]="searchTerm">
+  <button (click)="search()">Search</button>
+</div>
+<div class="pokemon-grid">
+  <div *ngFor="let pokemon of pokemonList" class="pokemon-item" (click)="openDialog(pokemon)">
+    <div class="poke-image-gif">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ pokemon.id }}.png" [alt]="pokemon.name">
+    </div>
+    <div class="pokemon-info">
+        <h5>{{ pokemon.name }}</h5>
+        <div class="types">
+            <ng-container *ngFor="let type of pokemon.types; let last = last">
+                <span class="pill" [style.backgroundColor]="getPokemonTypeColor(type.type.name)">
+                    {{ getTypeNameInSpanish(type.type.name) }}
+                </span>
+                <span *ngIf="!last">&nbsp;</span>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+<div class="pagination">
+  <button (click)="prevPage()">Anterior</button>
+  <span>{{ currentPage }}</span>
+  <button (click)="nextPage()">Siguiente</button>
+</div>
+
