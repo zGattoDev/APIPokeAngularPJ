@@ -1,8 +1,8 @@
-<h2 mat-dialog-title>{{ data.selectedPokemon.name }}</h2>
+
 <div class="dialog-container">
   <div class="pokemon-details">
     <div class="poke-image-gif">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ data.selectedPokemon.id }}.png" [alt]="data.selectedPokemon.name">
+      <img  [src]="data.selectedPokemon.sprites.other.showdown.front_default ?? data.selectedPokemon.sprites.other['official-artwork'].front_default" [alt]="data.selectedPokemon.name">
     </div>
     <div class="pokemon-info">
       <p>Nombre: {{ data.selectedPokemon.name }}</p>

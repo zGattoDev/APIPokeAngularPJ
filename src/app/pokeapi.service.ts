@@ -8,7 +8,6 @@ import { Observable } from 'rxjs';
 export class PokeapiService {
   private readonly apiUrl = 'https://pokeapi.co/api/v2';
   private litmitxPagPoke = 24
-
   constructor(private http: HttpClient) { }
 
   getPokemonList(page: number = 1): Observable<any> {
