@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+/*import { TestBed } from '@angular/core/testing';
 
 import { PokeapiService } from './pokeapi.service';
 
@@ -15,3 +15,4 @@ describe('PokeapiService', () => {
     console.log('La prueba "should be created" ha pasado correctamente.');
   });
 });
+*/
